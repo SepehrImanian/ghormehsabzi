@@ -46,14 +46,14 @@ gz -u "https://example.com" -c 100 -r 100
 **Output**:
 ```bash
 ------------ Starting DDOS ---------- url :  https://roocket.ir   Concurrents :  10   Requests :  1
-count :  1   Open Concurrent Process   url/host :  https://roocket.ir
-count :  2   Open Concurrent Process   url/host :  https://roocket.ir
-count :  3   Open Concurrent Process   url/host :  https://roocket.ir
-count :  4   Open Concurrent Process   url/host :  https://roocket.ir
-count :  5   Open Concurrent Process   url/host :  https://roocket.ir
-count :  6   Open Concurrent Process   url/host :  https://roocket.ir
-count :  7   Open Concurrent Process   url/host :  https://roocket.ir
-count :  8   Open Concurrent Process   url/host :  https://roocket.ir
-count :  9   Open Concurrent Process   url/host :  https://roocket.ir
+count :  1   Open Concurrent Process   url/host :  https://example.com
+count :  2   Open Concurrent Process   url/host :  https://example.com
+count :  3   Open Concurrent Process   url/host :  https://example.com
+count :  4   Open Concurrent Process   url/host :  https://example.com
+count :  5   Open Concurrent Process   url/host :  https://example.com
+count :  6   Open Concurrent Process   url/host :  https://example.com
+count :  7   Open Concurrent Process   url/host :  https://example.com
+count :  8   Open Concurrent Process   url/host :  https://example.com
+count :  9   Open Concurrent Process   url/host :  https://example.com
 ...
 ```
