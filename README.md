@@ -45,7 +45,7 @@ gz -u "https://example.com" -c 100 -r 100
 ```
 **Output**:
 ```bash
------------- Starting DDOS ---------- url :  https://roocket.ir   Concurrents :  10   Requests :  1
+------------ Starting DDOS ---------- url :  https://example.com  Concurrents :  10   Requests :  1
 count :  1   Open Concurrent Process   url/host :  https://example.com
 count :  2   Open Concurrent Process   url/host :  https://example.com
 count :  3   Open Concurrent Process   url/host :  https://example.com
