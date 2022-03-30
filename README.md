@@ -7,7 +7,7 @@ download latest release file and move it in in **/usr/local/bin** for linux user
 
 ```bash
 wget https://github.com/SepehrImanian/ghormehsabzi/releases/download/v0.0.1/gz
-chmod +x  ./gz
+chmod +x ./gz
 mv gz /usr/local/bin/gz
 ```
 
