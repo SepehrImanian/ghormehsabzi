@@ -1,4 +1,4 @@
-module go-ddos
+module gs
 
 go 1.18
 

