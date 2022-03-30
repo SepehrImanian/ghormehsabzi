@@ -17,6 +17,7 @@ var url string
   app := &cli.App{
     Name: "gz",
     Usage: "Load test with ghormehsabzi",
+    Version: "v0.0.1",
     Flags: []cli.Flag {
       &cli.StringFlag{
         Name:        "url",
