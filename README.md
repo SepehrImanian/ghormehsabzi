@@ -6,23 +6,23 @@ Generate **Concurrent Request** for load testing with **Ghormehsabzi** :-0
 download latest release file and move it in in **/usr/local/bin** for linux users
 
 ```bash
-wget https://github.com/SepehrImanian/ghormehsabzi/releases/download/v0.0.1/gz
-chmod +x ./gz
-mv gz /usr/local/bin/gz
+wget https://github.com/SepehrImanian/ghormehsabzi/releases/download/v0.0.2/gs
+chmod +x ./gs
+mv gs /usr/local/bin/gs
 ```
 
 ### CLI Interface
 
 use help command
 ```bash
-gz -h or --help
+gs -h or --help
 ```
 ```bash
 NAME:
-   gz - Load test with ghormehsabzi
+   gs - Load test with ghormehsabzi
 
 USAGE:
-   gz [global options] command [command options] [arguments...]
+   gs [global options] command [command options] [arguments...]
 
 VERSION:
    v0.0.1
@@ -41,7 +41,7 @@ GLOBAL OPTIONS:
 ### Example
 Generate load test with 100 concurrent process and 100 requests each of them
 ```bash
-gz -u "https://example.com" -c 100 -r 100
+gs -u "https://example.com" -c 100 -r 100
 ```
 **Output**:
 ```bash
